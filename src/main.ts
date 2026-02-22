@@ -167,9 +167,9 @@ export default class WakaTime extends Plugin {
 
     const user_agent = 'obsidian/' + apiVersion + ' obsidian-wakatime/' + this.manifest.version;
     args.push('--plugin', Utils.quote(user_agent));
-
     args.push('--lineno', String(lineno + 1));
     args.push('--cursorpos', String(cursorpos + 1));
+    args.push('--project', this.app.vault.getName()),
 
     if (isWrite) args.push('--write');
 
